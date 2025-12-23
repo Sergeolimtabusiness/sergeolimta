@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Effet Glace – Google Drive</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Drive_logo.png" type="image/png" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:title" content="Effet Glace – Google Drive" />
+  <meta property="og:description" content="Un effet glace animé avec accès rapide à votre dossier Google Drive." />
+  <meta property="og:image" content="https://i.ibb.co/7CkY7JW/effet-glace-preview.png" />
+  <meta property="og:url" content="https://ton-site.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Effet Glace – Google Drive" />
+  <meta name="twitter:description" content="Un effet glace animé avec accès rapide à votre dossier Google Drive." />
+  <meta name="twitter:image" content="https://i.ibb.co/7CkY7JW/effet-glace-preview.png" />
+
+  <!-- Styles et animations existants -->
   <style>
     :root {
       --cyan: #4fc3f7;
@@ -25,154 +43,6 @@
       justify-content: center;
     }
 
-    /* ================= BACKGROUND LIQUID ICE ================= */
-    .liquid-bg {
-      z-index: 0;
-      position: absolute;
-      inset: -40%;
-      filter: blur(70px) saturate(150%);
-      animation: hue 26s linear infinite;
-    }
-
-    .blob {
-      position: absolute;
-      width: 45vw;
-      height: 45vw;
-      border-radius: 50%;
-      mix-blend-mode: color-dodge;
-      opacity: 0.65;
-    }
-
-    /* mouvements lents, continus, sans saut */
-    .blob.blue {
-      background: radial-gradient(circle, var(--cyan), transparent 65%);
-      animation: moveA 48s linear infinite, glowA 9s ease-in-out infinite;
-    }
-
-    .blob.purple {
-      background: radial-gradient(circle, var(--purple), transparent 65%);
-      animation: moveB 60s linear infinite, glowB 13s ease-in-out infinite;
-    }
-
-    .blob.green {
-      background: radial-gradient(circle, var(--green), transparent 65%);
-      animation: moveC 54s linear infinite, glowC 11s ease-in-out infinite;
-    }
-
-    @keyframes moveA {
-      from { transform: translate(-20vw, -10vh); }
-      to   { transform: translate(80vw, 60vh); }
-    }
-
-    @keyframes moveB {
-      from { transform: translate(70vw, 80vh); }
-      to   { transform: translate(-30vw, -20vh); }
-    }
-
-    @keyframes moveC {
-      from { transform: translate(-10vw, 70vh); }
-      to   { transform: translate(60vw, -30vh); }
-    }
-
-    @keyframes glowA { 0%,100%{opacity:.35} 50%{opacity:.85} }
-    @keyframes glowB { 0%,100%{opacity:.4}  50%{opacity:.8}  }
-    @keyframes glowC { 0%,100%{opacity:.45} 50%{opacity:.9}  }
-
-    @keyframes hue {
-      from { filter: blur(70px) hue-rotate(0deg); }
-      to   { filter: blur(70px) hue-rotate(360deg); }
-    }
-
-    /* ================= CURSOR ICE LIGHT ================= */
-    .cursor-light {
-      z-index: 1;
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(circle 180px at var(--x,50%) var(--y,50%), rgba(255,255,255,0.35), transparent 65%);
-      mix-blend-mode: overlay;
-    }
-
-    /* ================= GLASS PANEL ================= */
-    .glass {
-      z-index: 2;
-      overflow: hidden; /* empêche les reflets de dépasser */
-      position: relative;
-      padding: 48px 56px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
-      backdrop-filter: blur(22px) saturate(160%);
-      border: 1px solid rgba(255,255,255,0.25);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 0 40px rgba(255,255,255,0.25);
-    }
-
-    .glass::before {
-      mix-blend-mode: overlay;
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.4), transparent 70%);
-      animation: shimmer 7s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-60%); }
-      50% { transform: translateX(60%); }
-      100% { transform: translateX(-60%); }
-    }
-
-    /* ================= BUTTON ================= */
-    .drive-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 28px;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 500;
-      background: linear-gradient(180deg, #ffffff, #f1f3f4);
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    .drive-icon { width: 26px; height: 26px; }
+    /* ...reste de ton CSS inchangé... */
   </style>
 </head>
-<body>
-
-  <div class="cursor-light"></div>
-
-  <div class="liquid-bg">
-    <div class="blob blue"></div>
-    <div class="blob purple"></div>
-    <div class="blob green"></div>
-  </div>
-
-  <div class="glass">
-    <button class="drive-btn" onclick="window.open('https://drive.google.com/drive/folders/1P0U-75OYbHODy1d0FugOrPSLcLr8_a8N?usp=sharing','_blank')">
-      <span class="drive-icon">
-        <svg viewBox="0 0 87 78" xmlns="http://www.w3.org/2000/svg">
-          <path d="M43.5 0L14.5 50h58L43.5 0z" fill="#34A853"/>
-          <path d="M14.5 50L0 78h58L72.5 50h-58z" fill="#FBBC05"/>
-          <path d="M43.5 0L72.5 50 58 78 29 28 43.5 0z" fill="#4285F4"/>
-        </svg>
-      </span>
-      Voir dans Drive
-    </button>
-  </div>
-
-<script>
-  const light = document.querySelector('.cursor-light');
-  document.addEventListener('mousemove', e => {
-    const x = (e.clientX / innerWidth) * 100;
-    const y = (e.clientY / innerHeight) * 100;
-    light.style.setProperty('--x', x + '%');
-    light.style.setProperty('--y', y + '%');
-  });
-</script>
-
-</body>
-</html>
