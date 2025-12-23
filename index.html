@@ -26,6 +26,33 @@
 
   <!-- Styles -->
   <style>
+    .profile {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 3; /* au-dessus des blobs et du glass */
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.profile .name {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+ 
     :root {
       --cyan: #4fc3f7;
       --purple: #7e57c2;
@@ -132,6 +159,10 @@
   </style>
 </head>
 <body>
+  <div class="profile">
+  <img src="https://image.noelshack.com/fichiers/2025/52/2/1766498184-picsart-25-07-29-21-16-06-412.jpg" alt="Sergeo Limta">
+  <div class="name">Sergeo Limta</div>
+  </div>
 
   <div class="cursor-light"></div>
 
