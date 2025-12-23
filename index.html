@@ -6,7 +6,7 @@
   <title>Effet Glace – Google Drive</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Drive_logo.png" type="image/png" />
+  <link rel="icon" href="https://image.noelshack.com/fichiers/2025/52/2/1766497026-google-drive.png" type="image/png" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,15 +14,15 @@
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:title" content="Effet Glace – Google Drive" />
   <meta property="og:description" content="Un effet glace animé avec accès rapide à votre dossier Google Drive." />
-  <meta property="og:image" content="https://i.ibb.co/7CkY7JW/effet-glace-preview.png" />
-  <meta property="og:url" content="https://ton-site.com" />
+  <meta property="og:image" content="https://image.noelshack.com/fichiers/2025/52/2/1766497676-screenshot-2025-12-23-144731.jpg" />
+  <meta property="og:url" content="https://sergeolimtabusiness.github.io/sergeolimta/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Effet Glace – Google Drive" />
   <meta name="twitter:description" content="Un effet glace animé avec accès rapide à votre dossier Google Drive." />
-  <meta name="twitter:image" content="https://i.ibb.co/7CkY7JW/effet-glace-preview.png" />
+  <meta name="twitter:image" content="https://image.noelshack.com/fichiers/2025/52/2/1766497676-screenshot-2025-12-23-144731.jpg" />
 
   <!-- Styles -->
   <style>
@@ -63,28 +63,17 @@
       opacity: 0.65;
     }
 
-    .blob.blue {
-      background: radial-gradient(circle, var(--cyan), transparent 65%);
-      animation: moveA 48s linear infinite, glowA 9s ease-in-out infinite;
-    }
-
-    .blob.purple {
-      background: radial-gradient(circle, var(--purple), transparent 65%);
-      animation: moveB 60s linear infinite, glowB 13s ease-in-out infinite;
-    }
-
-    .blob.green {
-      background: radial-gradient(circle, var(--green), transparent 65%);
-      animation: moveC 54s linear infinite, glowC 11s ease-in-out infinite;
-    }
+    .blob.blue { background: radial-gradient(circle, var(--cyan), transparent 65%); animation: moveA 48s linear infinite, glowA 9s ease-in-out infinite; }
+    .blob.purple { background: radial-gradient(circle, var(--purple), transparent 65%); animation: moveB 60s linear infinite, glowB 13s ease-in-out infinite; }
+    .blob.green { background: radial-gradient(circle, var(--green), transparent 65%); animation: moveC 54s linear infinite, glowC 11s ease-in-out infinite; }
 
     @keyframes moveA { from { transform: translate(-20vw, -10vh); } to { transform: translate(80vw, 60vh); } }
     @keyframes moveB { from { transform: translate(70vw, 80vh); } to { transform: translate(-30vw, -20vh); } }
     @keyframes moveC { from { transform: translate(-10vw, 70vh); } to { transform: translate(60vw, -30vh); } }
 
     @keyframes glowA { 0%,100%{opacity:.35} 50%{opacity:.85} }
-    @keyframes glowB { 0%,100%{opacity:.4}  50%{opacity:.8}  }
-    @keyframes glowC { 0%,100%{opacity:.45} 50%{opacity:.9}  }
+    @keyframes glowB { 0%,100%{opacity:.4} 50%{opacity:.8} }
+    @keyframes glowC { 0%,100%{opacity:.45} 50%{opacity:.9} }
 
     @keyframes hue { from { filter: blur(70px) hue-rotate(0deg); } to { filter: blur(70px) hue-rotate(360deg); } }
 
@@ -153,8 +142,8 @@
   </div>
 
   <div class="glass">
-    <button class="drive-btn" onclick="window.open('https://drive.google.com/drive/folders/1P0U-75OYbHODy1d0FugOrPSLcLr8_a8N?usp=sharing','_blank')">
-      <img class="drive-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Drive_logo.png" alt="Google Drive Logo">
+    <button class="drive-btn" onclick="window.open('https://drive.google.com','_blank')">
+      <img class="drive-icon" src="https://image.noelshack.com/fichiers/2025/52/2/1766497026-google-drive.png" alt="Google Drive Logo">
       Voir dans Drive
     </button>
   </div>
